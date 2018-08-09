@@ -11,7 +11,7 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
-        var meds = smart.patient.api.search({type: 'MedicationOrder'});
+        var meds = smart.patient.api.search({type: 'MedicationRequest'});
 
         $.when(pt, meds).fail(onError);
 
@@ -27,7 +27,7 @@
 
           var p = defaultPatient();
           p.fullName = fname + lname;
-          p.meds = meds[0].medication;
+          //p.meds = meds[0].medication;
           ret.resolve(p);
         });
       } else {
@@ -43,7 +43,7 @@
   function defaultPatient(){
     return {
       fullName: {value: ''},
-      meds: {value: ''}      
+      //meds: {value: ''}      
     };
   }
 
