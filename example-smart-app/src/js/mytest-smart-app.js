@@ -11,7 +11,7 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
-        var meds = smart.patient.api.search({type: 'MedicationOrder'});
+        var meds = smart.patient.api.fetchAll({type: 'MedicationOrder'});
 
         $.when(pt, meds).fail(onError);
 
