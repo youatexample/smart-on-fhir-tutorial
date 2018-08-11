@@ -20,13 +20,13 @@
           var fname = '';
           var lname = '';
 
-          if (typeof patient.name[0] !== 'undefined') {
-            fname = patient.name[0].given.join(' ');
-            lname = patient.name[0].family.join(' ');            
-          }          
+          //if (typeof patient.name[0] !== 'undefined') {
+            //fname = patient.name[0].given.join(' ');
+            //lname = patient.name[0].family.join(' ');            
+          //}          
 
           var p = defaultPatient();
-          p.fullName = fname + ' ' + lname;
+          p.fullName = pt.name.given + ' ' + pt.name.family;
           //p.meds = meds[0].medication;
           ret.resolve(p);
         });
@@ -51,7 +51,7 @@
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
-    $('#fullname').html(p.fullName);
+    $('#fullname').html('Patient: ' + p.fullName);
     
   };
 
