@@ -19,6 +19,7 @@
           var fullName = '';
           var fname = '';
           var lname = '';
+          var st = '';
 
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
@@ -26,12 +27,12 @@
           }
           
           if (typeof mo.status[0] !== 'undefined') {
-            p.meds =  mo.status[0];          
+            st =  mo.status[0];          
           }          
 
           var p = defaultPatient();
           p.fullName = fname.concat(" ",lname);
-          
+          p.meds = st;
           ret.resolve(p);
         });
       } else {
