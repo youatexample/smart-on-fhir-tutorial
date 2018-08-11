@@ -26,7 +26,7 @@
           }          
 
           var p = defaultPatient();
-          p.fullName = fname + lname;
+          p.fullName = fname + ' ' + lname;
           //p.meds = meds[0].medication;
           ret.resolve(p);
         });
