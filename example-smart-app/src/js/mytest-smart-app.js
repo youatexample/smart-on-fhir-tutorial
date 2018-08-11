@@ -26,8 +26,8 @@
             lname = patient.name[0].family.join(' ');            
           }
           
-          if (typeof mo.status[0] !== 'undefined') {
-            st =  mo.status[0];          
+          if (typeof mo[0] !== 'undefined') {
+            st =  mo[0];          
           }          
 
           var p = defaultPatient();
