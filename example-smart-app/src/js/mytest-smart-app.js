@@ -11,11 +11,11 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
-        var meds = smart.patient.api.fetchAll({type: 'MedicationOrder'});
+        //var meds = smart.patient.api.fetchAll({type: 'MedicationOrder'});
 
-        $.when(pt, meds).fail(onError);
+        $.when(pt).fail(onError);
 
-        $.when(pt, meds).done(function(patient, meds) {
+        $.when(pt).done(function(patient) {
           var fullName = '';
           var fname = '';
           var lname = '';
