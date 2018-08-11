@@ -20,15 +20,13 @@
           var fname = '';
           var lname = '';
 
-          //if (typeof patient.name[0] !== 'undefined') {
-            //fname = patient.name[0].given.join(' ');
-            //lname = patient.name[0].family.join(' ');            
-          //}          
+          if (typeof patient.name[0] !== 'undefined') {
+            fname = patient.name[0].given.join(' ');
+            lname = patient.name[0].family.join(' ');            
+          }          
 
           var p = defaultPatient();
-          fname = patient.name[0].given.join(' ');
-          lname = patient.name[0].family.join(' ');
-          p.fullName = fname.concat(lname);
+          p.fullName = fname + " " + lname;
           //p.meds = meds[0].medication;
           ret.resolve(p);
         });
