@@ -52,7 +52,7 @@
     $('#holder').show();
     $('#loading').hide();
     $('#fullname').html(p.fullName);
-    $('#meds').html(p.meds);
+    //$('#meds').html(p.meds);
     
   };
 
