@@ -26,9 +26,9 @@
           //}          
 
           var p = defaultPatient();
-          fname = pt.name.given;
-          lname = pt.name.family;
-          p.fullName = pt.name.given.concat(' ', pt.name.family);
+          fname = patient.name[0].given.join(' ');
+          lname = patient.name[0].family.join(' ');
+          p.fullName = fname.concat(lname);
           //p.meds = meds[0].medication;
           ret.resolve(p);
         });
