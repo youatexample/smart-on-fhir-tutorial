@@ -27,7 +27,7 @@
 
           var p = defaultPatient();
           p.fullName = fname.concat(" ",lname);
-          //p.meds = meds[0].medication;
+          p.meds = MedicationOrder.medicationReference(meds[0]);
           ret.resolve(p);
         });
       } else {
@@ -43,7 +43,7 @@
   function defaultPatient(){
     return {
       fullName: {value: ''},
-      //meds: {value: ''}      
+      meds: {value: ''}      
     };
   }
 
@@ -52,6 +52,7 @@
     $('#holder').show();
     $('#loading').hide();
     $('#fullname').html(p.fullName);
+    $('#meds').html(p.meds);
     
   };
 
