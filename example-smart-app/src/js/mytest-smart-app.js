@@ -27,7 +27,7 @@
 
           var p = defaultPatient();
           p.fullName = fname.concat(" ",lname);
-          p.meds = meds[0];
+          //p.meds = meds[0];
           ret.resolve(p);
         });
       } else {
