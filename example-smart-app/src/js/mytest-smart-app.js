@@ -11,11 +11,11 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
-        var meds = smart.patient.api.search({type: 'MedicationOrder'});
+        var mo = smart.patient.api.search({type: 'MedicationOrder'});
 
-        $.when(pt, meds).fail(onError);
+        $.when(pt, mo).fail(onError);
 
-        $.when(pt, meds).done(function(patient) {
+        $.when(pt, mo).done(function(patient) {
           var fullName = '';
           var fname = '';
           var lname = '';
@@ -25,13 +25,13 @@
             lname = patient.name[0].family.join(' ');            
           }
           
-          if (typeof meds.MedicationOrder.status[0] !== 'undefined') {
-            p.meds =  meds.MedicationOrder.status[0];          
+          if (typeof mo.MedicationOrder.status[0] !== 'undefined') {
+            p.meds =  mo.MedicationOrder.status[0];          
           }          
 
           var p = defaultPatient();
           p.fullName = fname.concat(" ",lname);
-          //p.meds = meds[0];
+          
           ret.resolve(p);
         });
       } else {
