@@ -26,7 +26,9 @@
           //}          
 
           var p = defaultPatient();
-          p.fullName = pt.name.given + ' ' + pt.name.family;
+          fname = pt.name.given;
+          lname = pt.name.family;
+          p.fullName = pt.name.given.concat(' ', pt.name.family);
           //p.meds = meds[0].medication;
           ret.resolve(p);
         });
@@ -51,7 +53,7 @@
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
-    $('#fullname').html('Patient: ' + p.fullName);
+    $('#fullname').html(p.fullName);
     
   };
 
