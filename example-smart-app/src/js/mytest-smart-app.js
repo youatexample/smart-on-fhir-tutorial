@@ -25,8 +25,8 @@
             lname = patient.name[0].family.join(' ');            
           }
           
-          if (typeof meds[0].medication !== 'undefined') {
-            p.meds =  meds[0].medication;          
+          if (typeof meds.MedicationOrder.status[0] !== 'undefined') {
+            p.meds =  meds.MedicationOrder.status[0];          
           }          
 
           var p = defaultPatient();
