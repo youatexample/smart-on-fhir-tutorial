@@ -13,9 +13,9 @@
         var pt = patient.read();
         var meds = smart.patient.api.search({type: 'MedicationOrder'});
 
-        $.when(pt).fail(onError);
+        $.when(pt, meds).fail(onError);
 
-        $.when(pt).done(function(patient) {
+        $.when(pt, meds).done(function(patient) {
           var fullName = '';
           var fname = '';
           var lname = '';
