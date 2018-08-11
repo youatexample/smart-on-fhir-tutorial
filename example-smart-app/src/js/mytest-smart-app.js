@@ -23,6 +23,10 @@
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');            
+          }
+          
+          if (typeof meds.medication[0] !== 'undefined') {
+            p.meds =  meds.medication[0];          
           }          
 
           var p = defaultPatient();
