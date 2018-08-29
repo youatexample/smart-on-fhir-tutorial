@@ -12,10 +12,11 @@
         var patient = smart.patient;
         var pt = patient.read();
         var mo = smart.patient.api.search({type: 'MedicationOrder'});
-        alert(mo[0].getStatus());
+        
         $.when(pt, mo).fail(onError);
 
-        $.when(pt, mo).done(function(patient) {          
+        $.when(pt, mo).done(function(patient) { 
+          alert(mo.getStatus());
           var fullName = '';
           var fname = '';
           var lname = '';
