@@ -16,7 +16,10 @@
         $.when(pt, mo).fail(onError);
 
         $.when(pt, mo).done(function(patient) { 
-          alert(mo[0].getStatus());
+          if (typeof mo[0] !== 'undefined') {
+            alert(mo[0].getStatus());            
+          }
+          
           var fullName = '';
           var fname = '';
           var lname = '';
