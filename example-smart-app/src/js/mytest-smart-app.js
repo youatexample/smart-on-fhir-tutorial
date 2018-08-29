@@ -16,6 +16,7 @@
         $.when(pt, mo).fail(onError);
 
         $.when(pt, mo).done(function(patient) {
+          alert(mo.getStatus());
           var fullName = '';
           var fname = '';
           var lname = '';
