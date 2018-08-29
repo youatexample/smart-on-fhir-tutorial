@@ -15,25 +15,24 @@
 
         $.when(pt, mo).fail(onError);
 
-        $.when(pt, mo).done(function(patient) {
-          alert(mo.getStatus());
+        $.when(pt, mo).done(function(patient) {          
           var fullName = '';
           var fname = '';
           var lname = '';
-          var st = '';
+          //var st = '';
 
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');            
           }
           
-          if (typeof mo[0] !== 'undefined') {
-            st =  mo[0];          
-          }          
+          //if (typeof mo[0] !== 'undefined') {
+          //  st =  mo[0];          
+          //}          
 
           var p = defaultPatient();
           p.fullName = fname.concat(" ",lname);
-          p.meds = st;
+          //p.meds = st;
           ret.resolve(p);
         });
       } else {
@@ -49,7 +48,7 @@
   function defaultPatient(){
     return {
       fullName: {value: ''},
-      meds: {value: ''}      
+      //meds: {value: ''}      
     };
   }
 
@@ -58,7 +57,7 @@
     $('#holder').show();
     $('#loading').hide();
     $('#fullname').html(p.fullName);
-    $('#meds').html(p.meds);
+    //$('#meds').html(p.meds);
     
   };
 
